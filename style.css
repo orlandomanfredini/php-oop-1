@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(27, 27, 27);
+}
+
+
+.col-6{
+    color: white;
+    border-radius: 6px;
+    
+    
+}
+
+
+img{
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    
+}
