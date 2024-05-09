@@ -9,43 +9,15 @@ Istanziate poi almeno due oggetti Production e stampate in pagina i loro valori,
 
 <?php
 
-class Production{
-    public $title;
-    public $lenguage;
-    public $vote;
-    public $img;
-    public $type;
+include __DIR__ .  '/Models/Production.php';
 
-    function __construct($_title, $_lenguage, $_vote, $_img,  $_type){
-        $this -> title = $_title;
-        $this -> lenguage = $_lenguage;
-        $this -> vote = $_vote;
-        $this -> img = $_img;
-        $this -> type = $_type;
-    }
+include __DIR__ . '/Db.php';
 
-    public function renderTitle(){
-       return $this -> title;
-    }
-    public function renderLenguage(){
-        return $this -> lenguage;
-     }
-    public function renderVote(){
-        return $this -> vote;
-     }
-    public function renderImg(){
-        return $this -> img;
-    }
-    public function renderType(){
-        return $this -> type;
-     }
-    
-}
 
-$content1 = new Production ('Inception', 'US', 8.5,'https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg', 'FILM');
-// var_dump($content1);
+// $content1 = new Production ('Inception', 'US', 8.5,'https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg', 'FILM');
+// // var_dump($content1);
 
-$content2 = new Production ('Braking Bad', 'US', 8.3,'https://c.wallhere.com/photos/9e/d9/Breaking_Bad-155472.jpg!d', 'SERIES TV');
+// $content2 = new Production ('Braking Bad', 'US', 8.3,'https://c.wallhere.com/photos/9e/d9/Breaking_Bad-155472.jpg!d', 'SERIES TV');
 // var_dump($content2);
 
 
@@ -53,33 +25,33 @@ $content2 = new Production ('Braking Bad', 'US', 8.3,'https://c.wallhere.com/pho
 // prova composizione
 
 
-class User {
-    public $name;
-    public $address;
+// class User {
+//     public $name;
+//     public $address;
 
-    function __construct($_name, Address $_address){
-        $this -> name = $_name;
-        $this -> address = $_address;
+//     function __construct($_name, Address $_address){
+//         $this->name = $_name;
+//         $this->address = $_address;
 
-    }
+//     }
     
-}
+// }
 
-class Address {
-    public $city;
-    public $street;
-    public $postal_code;
+// class Address {
+//     public $city;
+//     public $street;
+//     public $postal_code;
 
 
-    function __construct($_city, $_street, $_postal_code){
-        $this -> city = $_city;
-        $this -> street = $_street;
-        $this -> postal_code = $_postal_code;
-    }
-}
+//     function __construct($_city, $_street, $_postal_code){
+//         $this->city = $_city;
+//         $this->street = $_street;
+//         $this->postal_code = $_postal_code;
+//     }
+// }
 
-$orlando = new User ('Orlando', new Address('Ferrara', 'Via delle volte', 44121));
-// var_dump($orlando);
+// $orlando = new User ('Orlando', new Address('Ferrara', 'Via delle volte', 44121));
+// // var_dump($orlando);
 
 
 
@@ -98,23 +70,13 @@ $orlando = new User ('Orlando', new Address('Ferrara', 'Via delle volte', 44121)
 <body>
    <div class="container py-5">
     <div class="row space-between">
-        <div class="col-6 d-flex flex-column">
-            <img class="align-self-center" src="<?php echo $content1 -> renderImg() ; ?>" alt="">
-            <h3 class="align-self-center mt-3" ><?php echo $content1 -> renderTitle() ; ?></h3>
-            <span class="align-self-center" ><?php echo $content1 -> renderLenguage(); ?></span>
-            <span class="align-self-center" ><?php echo $content1 -> renderType(); ?> </span>
+        <div class="col-6 d-flex flex-column" v-for="content in $contents">
+            <img class="align-self-center" src="<?php echo $contents->renderImg(); ?>" alt="">
+            <h3 class="align-self-center mt-3" ><?php?></h3>
+            <span class="align-self-center" ><?php  ?></span>
+            <span class="align-self-center" ><?php ?> </span>
             <div class="align-self-center" >
-                <?php echo $content1 -> renderVote() ?>
-            </div>
-
-        </div>
-        <div class="col-6 d-flex flex-column">
-            <img class="align-self-center" src="<?php echo $content2 -> renderImg() ; ?>" alt="">
-            <h3 class="align-self-center mt-3" ><?php echo $content2 -> renderTitle() ; ?></h3>
-            <span class="align-self-center" ><?php echo $content2 -> renderLenguage(); ?></span>
-            <span class="align-self-center" ><?php echo $content2 -> renderType(); ?> </span>
-            <div class="align-self-center" >
-                <?php echo $content2 -> renderVote() ?>
+                <?php  ?>
             </div>
 
         </div>
