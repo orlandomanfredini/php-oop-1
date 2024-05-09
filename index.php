@@ -96,7 +96,7 @@ $orlando = new User ('Orlando', new Address('Ferrara', 'Via delle volte', 44121)
     <title>HOME</title>
 </head>
 <body>
-   <div class="container p-5">
+   <div class="container py-5">
     <div class="row space-between">
         <div class="col-6 d-flex flex-column">
             <img class="align-self-center" src="<?php echo $content1 -> renderImg() ; ?>" alt="">
