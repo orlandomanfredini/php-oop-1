@@ -9,9 +9,8 @@ Istanziate poi almeno due oggetti Production e stampate in pagina i loro valori,
 
 <?php
 
-include __DIR__ .  '/Models/Production.php';
-
 include __DIR__ . '/Db.php';
+// var_dump($contents);
 
 
 // $content1 = new Production ('Inception', 'US', 8.5,'https://i.ebayimg.com/images/g/JfYAAOSwIOtbatHS/s-l1200.jpg', 'FILM');
@@ -70,16 +69,19 @@ include __DIR__ . '/Db.php';
 <body>
    <div class="container py-5">
     <div class="row space-between">
-        <div class="col-6 d-flex flex-column" v-for="content in $contents">
-            <img class="align-self-center" src="<?php echo $contents->renderImg(); ?>" alt="">
-            <h3 class="align-self-center mt-3" ><?php?></h3>
-            <span class="align-self-center" ><?php  ?></span>
-            <span class="align-self-center" ><?php ?> </span>
+        <?php foreach($contents as $content){ ?>
+            <div class="col-lg-6  col-md-6 d-flex flex-column col-sm-12 text-white mt-3">
+            <img class="align-self-center" src="<?php echo $content->renderImg()?>" alt="">
+            <h3 class="align-self-center mt-3" ><?php echo $content -> renderTitle() ?></h3>
+            <span class="align-self-center" ><?php echo $content -> renderLenguage()  ?></span>
+            <span class="align-self-center" ><?php echo $content -> renderVote() ?> </span>
             <div class="align-self-center" >
-                <?php  ?>
+                <?php echo $content -> renderType()  ?>
             </div>
 
-        </div>
+           </div>
+        <?php } ?>
+        
     </div>
    </div> 
 </body>
