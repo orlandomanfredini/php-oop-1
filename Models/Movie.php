@@ -12,8 +12,8 @@ class Movie extends Production{
         $this->durata=$_durata;
     }
 
-    public function stampaDati(){
-        var_dump($this->$profitti, $this->$_title);
+    public function getDati(){
+        return "{$this->profitti}ml - {$this->durata} min";
     }
     
 };

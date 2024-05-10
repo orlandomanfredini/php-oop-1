@@ -70,6 +70,7 @@ include __DIR__ . '/Db.php';
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aa1661fd5d.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <title>HOME</title>
@@ -83,12 +84,14 @@ include __DIR__ . '/Db.php';
             <img class="align-self-center" src="<?php echo $content->renderImg()?>" alt="">
             <h3 class="align-self-center mt-3" ><?php echo $content -> renderTitle() ?></h3>
             <span class="align-self-center" ><?php echo $content -> renderLenguage()  ?></span>
+            <div class="text-center">
             <span class="align-self-center" ><?php echo $content -> renderVote() ?> </span>
-            <div class="align-self-center" >
-            
+            <i class="fa-solid fa-thumbs-up"></i>
             </div>
-               <?php echo $istanza1-> stampaDati(); ?>
-           </div>
+            <div class="align-self-center" >
+                  <?php echo $content->getDati() ?>
+            </div>
+            </div>
         <?php } ?>
         
     </div>
