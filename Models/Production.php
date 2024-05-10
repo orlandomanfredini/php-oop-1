@@ -1,18 +1,20 @@
 <?php
 
+require_once __DIR__ . '/Genre.php';
+
 class Production{
     public $title;
     public $lenguage;
     public $vote;
     public $img;
-    public $type;
+    public $genre;
 
-    function __construct($_title, $_lenguage, $_vote, $_img,  $_type){
+    function __construct($_title, $_lenguage, $_vote, $_img, Genre $_genre){
         $this->title = $_title;
         $this->lenguage = $_lenguage;
         $this->vote = $_vote;
         $this->img = $_img;
-        $this->type = $_type;
+        $this->genre = $_genre;
     }
 
     public function renderTitle(){
@@ -27,9 +29,8 @@ class Production{
     public function renderImg(){
         return $this->img;
     }
-    public function renderType(){
-        return $this->type;
-     }
+    
     
 }
+
 

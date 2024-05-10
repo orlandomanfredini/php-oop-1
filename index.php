@@ -7,6 +7,13 @@ La classe deve avere le sue variabili d’istanza, il costruttore e i metodi.
 Istanziate poi almeno due oggetti Production e stampate in pagina i loro valori,
  con un layout a vostro piacere. -->
 
+
+ <!-- Aggiungete al lavoro di ieri le classi Movie e TVSerie
+La classe Movie gestisce due proprietà: profitti e durata.
+La classe TVSerie gestisce il numero di stagioni.
+Facciamo in modo che Movie e TVSerie ereditino le proprietà di base dalla classe Production.
+Creiamo delle istanze di Movie e TVSerie e stampiamo le informazioni in pagina -->
+
 <?php
 
 include __DIR__ . '/Db.php';
@@ -78,9 +85,9 @@ include __DIR__ . '/Db.php';
             <span class="align-self-center" ><?php echo $content -> renderLenguage()  ?></span>
             <span class="align-self-center" ><?php echo $content -> renderVote() ?> </span>
             <div class="align-self-center" >
-                <?php echo $content -> renderType()  ?>
+            
             </div>
-
+               <?php echo $istanza1-> stampaDati(); ?>
            </div>
         <?php } ?>
         
